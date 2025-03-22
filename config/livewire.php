@@ -68,7 +68,6 @@ return [
         'rules' => ['max:5120'],       // Example: ['file', 'mimes:png,jpg']  | Default: ['required', 'file', 'max:12288'] (12MB)
         'directory' => null,   // Example: 'tmp'                      | Default: 'livewire-tmp'
         'middleware' => null,  // Example: 'throttle:5,1'             | Default: 'throttle:60,1'
-        'endpoint' => 'http://192.168.1.100:9004/livewire/upload-file', // Force HTTP
         'preview_mimes' => [   // Supported file types for temporary pre-signed file URLs...
             'png',
             'gif',
