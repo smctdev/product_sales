@@ -10,7 +10,7 @@ services:
         working_dir: /var/www/html
         volumes:
             - /home/webserver/systems/product_sales/config/livewire.php:/var/www/html/config/livewire.php
-            - /home/webserver/systems/product_sales:/var/www/public
+            - /home/webserver/systems/product_sales:/var/www/html/public
         environment:
             APP_ENV: production
             APP_URL: https://e-commerce.smctgroup.ph
