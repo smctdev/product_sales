@@ -10,10 +10,10 @@ services:
         working_dir: /var/www/html
         volumes:
             - /home/webserver/systems/product_sales/config/livewire.php:/var/www/html/config/livewire.php
-            - /home/webserver/systems/product_sales:/var/www/html/public/storage
+           # - /home/webserver/systems/product_sales:/var/www/html/public/storage
         environment:
             APP_ENV: production
-            APP_URL: 192.168.1.100:9004
+            APP_URL: http://192.168.1.100:9004
             DB_CONNECTION: mysql
             DB_HOST: 172.17.0.1
             DB_PORT: 3306
@@ -36,7 +36,7 @@ services:
         volumes:
             - .:/var/www/html
             - ./default.conf:/etc/nginx/conf.d/default.conf
-            - /home/webserver/systems/product_sales:/var/www/html/public/storage
+           # - /home/webserver/systems/product_sales:/var/www/html/public/storage
         depends_on:
             - e-commerce-app2
         networks:
