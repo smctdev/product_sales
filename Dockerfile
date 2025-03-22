@@ -18,6 +18,6 @@ RUN npm install && npm run build
 
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-EXPOSE 9003
+EXPOSE 9004
 
 CMD ["php-fpm"]

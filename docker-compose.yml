@@ -1,11 +1,11 @@
 version: '3.8'
 
 services:
-    e-commerce-app:
+    e-commerce-app2:
         build:
             context: .
             dockerfile: Dockerfile
-        container_name: e-commerce-app
+        container_name: e-commerce-app2
         restart: unless-stopped
         volumes:
             - .:/var/www/html
@@ -17,7 +17,7 @@ services:
             DB_CONNECTION: mysql
             DB_HOST: 172.17.0.1
             DB_PORT: 3306
-            DB_DATABASE: psaisv2
+            DB_DATABASE: product_sales
             DB_USERNAME: smct
             DB_PASSWORD: smct
         command: >
@@ -25,14 +25,22 @@ services:
                    npm install &&
                    npm run build &&
                    php-fpm"
-    e-commerce-nginx:
+        networks:
+            - e-commerce-network2
+    e-commerce-nginx2:
         image: nginx:alpine
-        container_name: e-commerce-nginx
+        container_name: e-commerce-nginx2
         restart: unless-stopped
         ports:
-            - "9003:9003"
+            - "9004:9004"
         volumes:
             - .:/var/www/html
             - ./default.conf:/etc/nginx/conf.d/default.conf
         depends_on:
-            - e-commerce-app
+            - e-commerce-app2
+        networks:
+            - e-commerce-network2
+
+networks:
+    e-commerce-network2:
+        driver: bridge  
