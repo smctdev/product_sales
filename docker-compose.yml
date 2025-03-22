@@ -7,8 +7,8 @@ services:
             dockerfile: Dockerfile
         container_name: e-commerce-app2
         restart: unless-stopped
+        working_dir: /var/www/html
         volumes:
-            - .:/var/www/html
             - /home/webserver/systems/Product-Sales-And-Inventory-System-V2/config/livewire.php:/var/www/html/config/livewire.php
             - /home/webserver/uploads/e-commerce-uploads:/var/www/html/public/storage
         environment:
