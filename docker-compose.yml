@@ -11,8 +11,8 @@ services:
         volumes:
              - .:/var/www/html
              - ./local.ini:/usr/local/etc/php/conf.d/local.ini
-             #- /home/webserver/uploads/product_sales:/var/www/html/storage/app/public
-             - ./storage/app:/var/www/html/storage/app
+             - /home/webserver/uploads/product_sales/public:/var/www/html/storage/app/public
+            # - ./storage/app/public/livewire-tmp:/var/www/html/storage/app/public/livewire-tmp
         environment:
             APP_ENV: production
             APP_URL: https://product.smctgroup.ph/
@@ -38,7 +38,8 @@ services:
         volumes:
             - .:/var/www/html
             - ./default.conf:/etc/nginx/conf.d/default.conf
-            - ./storage/app:/var/www/html/storage/app
+            - /home/webserver/uploads/product_sales/public:/var/www/html/storage/app/public
+           # - ./storage/app/public/livewire-tmp:/var/www/html/storage/app/public/livewire-tmp
         depends_on:
             - e-commerce-app2
         networks:
