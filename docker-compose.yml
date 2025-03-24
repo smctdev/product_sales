@@ -39,7 +39,7 @@ services:
             - .:/var/www/html
             - ./default.conf:/etc/nginx/conf.d/default.conf
             - /home/webserver/uploads/product_sales/public:/var/www/html/storage/app/public
-            - /home/webserver/uploads/product_sales/livewire-tmp:/var/www/html/storage/app/livewire-tmp
+            - /home/webserver/uploads/product_sales/livewire-tmp:/var/www/html/storage/app/public/livewire-tmp
         depends_on:
             - e-commerce-app2
         networks:
